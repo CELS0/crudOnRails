@@ -1,0 +1,14 @@
+version: '3'
+services:
+  db:
+    image: 'postgres:13'
+    environment:
+      POSTGRES_DB: ${DATABASE}
+      POSTGRES_PASSWORD: ${PWDDB}
+    volumes:
+      - 'data:/var/lib/postgresql/data'
+    ports:
+      - ${PORTBD}:5432
+volumes:
+  data: null
+
